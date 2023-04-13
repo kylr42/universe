@@ -1,0 +1,29 @@
+# https://copier.readthedocs.io/en/stable/configuring/#copier-yaml
+
+_subdirectory: project
+_templates_suffix: .jinja
+
+
+project_name:
+    type: str
+    help: What is your project name?
+    default: Universe
+
+framework_type:
+    type: str
+    help: What framework do you want to use?
+    default: fastapi
+    choices:
+        - fastapi
+        - aiohttp
+        - aiogram
+        - flask
+
+database_type:
+    type: str
+    help: What database do you want to use?
+    default: postgresql
+    choices:
+        - postgresql
+        - mysql
+        - sqlite
