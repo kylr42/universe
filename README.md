@@ -4,12 +4,17 @@
 
 # Universe Copier Template
 
-
 This project template simplifies creating new projects and facilitating maintaining existing projects by standardizing their structure. Using such a project enhances efficiency and reduces development time for Python projects.
 
-[Copier](https://copier.readthedocs.io/en/latest/) is required to use this template. Copier is an open source tool that hydrates projects from templates and natively supports updating projects as the original template matures. It's really neat!
+## Example
 
-See the detailed user guide in [readthedocs](https://lincc-ppt.readthedocs.io/) for more information.
+This is an example of how the template will look like after generation. 
+
+![example](images/example.gif)
+
+> [Copier](https://copier.readthedocs.io/en/latest/) is required to use this template. Copier is an open source tool that hydrates projects from templates and natively supports updating projects as the original template matures. It's really neat!
+>
+> See the detailed user guide in [readthedocs](https://lincc-ppt.readthedocs.io/) for more information.
 
 
 This project itself is just the template, but you need to install these tools to use it:
