@@ -8,14 +8,20 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 dependency-injector = "^4.41.0"
-fastapi = "^0.95.0"
-aiopg = "^1.4.0"
 pydantic = "^1.10.7"
 python-dotenv = "^1.0.0"
+{% if framework_type == "fastapi" %}
+fastapi = "^0.95.0"
+{% elif framework_type == "aiogram" %}
 aiogram = "^2.25.1"
+{% endif %}
+{% if database_type == "postgresql" %}
+aiopg = "^1.4.0"
+{% elif database_type == "mysql" %}
 aiomysql = "^0.1.1"
+{% elif database_type == "sqlite" %}
 aiosqlite = "^0.18.0"
-
+{% endif %}
 
 [build-system]
 requires = ["poetry-core"]

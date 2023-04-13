@@ -1,13 +1,22 @@
 # https://copier.readthedocs.io/en/stable/configuring/#copier-yaml
 
-_subdirectory: project
+_subdirectory: src
 _templates_suffix: .jinja
-
+_commit: v1.0.0
 
 project_name:
     type: str
     help: What is your project name?
     default: Universe
+
+project_license:
+    type: str
+    help: What licence do you want to use?
+    default: MIT
+    choices:
+        - MIT
+        - APACHE v2.0
+        - GPL v3.0
 
 framework_type:
     type: str
@@ -27,3 +36,16 @@ database_type:
         - postgresql
         - mysql
         - sqlite
+
+ci:
+    type: str
+    help: What CI do you want to use?
+    default: github
+    choices:
+        - github
+        - gitlab
+
+_tasks:
+    - git init
+    - poetry install
+    - poetry run pre-commit install
