@@ -15,7 +15,7 @@ __all__ = ["get_connection"]
 async def get_connection(
     postgresql: Postgresql = Provide[Connectors.postgresql],
 ) -> Cursor:
-    """Get async connection to {% if database_type == "postgresql" %}postgresql{%endif%} of pool."""
+    """Get async connection to {% if database_type == "{% if database_type == "postgresql"%}postgresql{% endif %}" %}{% if database_type == "postgresql"%}postgresql{% endif %}{%endif%} of pool."""
 
     async with postgresql.get_connect() as connection:
         async with (await connection.cursor(cursor_factory=RealDictCursor)) as cur:

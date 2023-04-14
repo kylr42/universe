@@ -20,7 +20,7 @@ class Connectors(containers.DeclarativeContainer):
         pydantic_settings=[settings],
     )
 
-    # Create {% if database_type == "postgresql" %}postgresql{%endif%} connector.
+    # Create {% if database_type == "{% if database_type == "postgresql"%}postgresql{% endif %}" %}{% if database_type == "postgresql"%}postgresql{% endif %}{%endif%} connector.
     postgresql = providers.Factory(
         Postgresql,
         username=configuration.POSTGRES_USER,

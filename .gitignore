@@ -317,4 +317,7 @@ tags
 # Persistent undo
 [._]*.un~
 
+
+/pyproject.toml
+/poetry.lock
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm+all,macos,vim,dotenv

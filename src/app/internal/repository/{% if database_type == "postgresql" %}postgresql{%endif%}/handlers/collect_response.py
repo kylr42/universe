@@ -16,7 +16,7 @@ def collect_response(fn):
     """
 
     Args:
-        fn: Target function that contains a query in {% if database_type == "postgresql" %}postgresql{%endif%}.
+        fn: Target function that contains a query in {% if database_type == "{% if database_type == "postgresql"%}postgresql{% endif %}" %}{% if database_type == "postgresql"%}postgresql{% endif %}{%endif%}.
 
     Returns:
         The model that is specified in type hints of `fn`.
