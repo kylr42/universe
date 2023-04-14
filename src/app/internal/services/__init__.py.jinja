@@ -1,0 +1,25 @@
+from dependency_injector import containers, providers
+
+from src.app.internal.repository import Repositories{% if database_type == "postgresql" %}, postgresql{% endif %}
+from src.app.pkg.settings import settings
+
+__all__ = ["Services", ]
+
+
+class Services(containers.DeclarativeContainer):
+    """Containers with services."""
+
+    configuration = providers.Configuration(
+        name="settings",
+        pydantic_settings=[settings],
+    )
+
+{% if database_type == "postgresql" %}
+    repositories: postgresql.Repositories = providers.Container(
+        Repositories.postgres,
+    )  # type: ignore
+{% else %}
+    repositories: Repositories = providers.Container(
+        Repositories,
+    )  # type: ignore
+{% endif %}
